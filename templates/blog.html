@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Owl Carousel CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Owl Carousel Theme CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navigation Bar -->
+    {%include 'header.html'%}
+
+    <!-- Owl Carousel -->
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <img src="https://source.unsplash.com/random/800x400" alt="Blog Image">
+        </div>
+        <div class="item">
+            <img src="https://source.unsplash.com/random/800x401" alt="Blog Image">
+        </div>
+        <div class="item">
+            <img src="https://source.unsplash.com/random/800x402" alt="Blog Image">
+        </div>
+    </div>
+
+    <!-- Latest Blog Posts Section -->
+    <div class="container mx-auto mt-8 px-4">
+        <h1 class="text-3xl font-bold mb-4">Latest Blog Posts</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- Blog Post 1 -->
+            <div class="bg-white shadow-lg p-4 animate__animated animate__fadeIn">
+                <h2 class="text-xl font-bold mb-2">Blog Post Title 1</h2>
+                <p class="text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis convallis turpis in eros sollicitudin fermentum.</p>
+                <a href="#" class="text-blue-500 hover:text-blue-700">Read more</a>
+            </div>
+            <!-- Blog Post 2 -->
+            <div class="bg-white shadow-lg p-4 animate__animated animate__fadeIn">
+                <h2 class="text-xl font-bold mb-2">Blog Post Title 2</h2>
+                <p class="text-gray-700">Suspendisse potenti. Fusce vehicula lacus eget quam placerat, ac pretium arcu imperdiet.</p>
+                <a href="#" class="text-blue-500 hover:text-blue-700">Read more</a>
+            </div>
+            <!-- Blog Post 3 -->
+            <div class="bg-white shadow-lg p-4 animate__animated animate__fadeIn">
+                <h2 class="text-xl font-bold mb-2">Blog Post Title 3</h2>
+                <p class="text-gray-700">Cras non justo nec justo viverra malesuada. Aliquam eget sapien sit amet odio luctus aliquam.</p>
+                <a href="#" class="text-blue-500 hover:text-blue-700">Read more</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    {% include 'footer.html'%}
+    <!-- Owl Carousel JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop:true,
+                margin:10,
+                nav:false,
+                dots:true,
+                autoplay:true,
+                autoplayTimeout:3000,
+                autoplayHoverPause:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:2
+                    },
+                    1000:{
+                        items:3
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

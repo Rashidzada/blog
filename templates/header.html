@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Animate CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Random Image from Unsplash -->
+    <style>
+        .profile-image {
+            background-image: url('https://source.unsplash.com/random');
+            background-size: cover;
+            background-position: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    </style>
+    <!-- JavaScript for Navigation Bar Animation -->
+    <script>
+        setTimeout(() => {
+            document.querySelector('nav').classList.add('bg-blue-500', 'animate__animated', 'animate__fadeIn');
+        }, 4000);
+    </script>
+</head>
+
+<body class="bg-gray-800 text-white">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-700 py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <!-- Profile Image -->
+            <div class="profile-image"></div>
+            <!-- Logo -->
+            <a href="/" class="text-white text-2xl font-bold">My Blog</a>
+            <!-- Navigation Links -->
+            <ul class="flex space-x-4">
+                <li><a href="/" class="text-white hover:text-gray-400">Home</a></li>
+                <li><a href="{% url 'blog' %}" class="text-white hover:text-gray-400">Blog</a></li>
+                <li><a href="{% url 'about'%}" class="text-white hover:text-gray-400">About</a></li>
+                <li><a href="{% url 'contact'%}" class="text-white hover:text-gray-400">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content Section -->
+    <div class="container mx-auto mt-8 px-4">
+        <h1 class="text-3xl font-bold mb-4">Welcome to My Blog</h1>
+        <p class="text-gray-300">Explore the latest articles and stories.</p>
+    </div>
+</body>
+
+</html>
